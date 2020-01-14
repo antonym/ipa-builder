@@ -21,7 +21,5 @@ jobs:
         pip3 list -v
     - name: Generate image
       run: |
-        ls -la /opt/hostedtoolcache/Python/3.8.0/x64/bin
-        echo $PATH
         export PATH=$PATH:/opt/hostedtoolcache/Python/3.8.0/x64/bin
-        sudo /home/runner/.local/bin/ironic-python-agent-builder fedora
+        sudo /opt/hostedtoolcache/Python/3.8.0/x64/bin/ironic-python-agent-builder fedora
