@@ -9,10 +9,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+        architecture: 'x64'
+    
     - name: Setup Builder
       run: |
-        pip install wheel
-        pip install --user diskimage-builder ironic-python-agent-builder
+        pip3 install wheel
+        pip3 install --user diskimage-builder ironic-python-agent-builder
     - name: Generate image
       run: |
         sudo /usr/local/bin/ironic-python-agent-builder fedora
