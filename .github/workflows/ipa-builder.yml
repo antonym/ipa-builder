@@ -9,12 +9,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
     - name: Setup Builder
       run: |
         pip install wheel
         pip install --user diskimage-builder ironic-python-agent-builder
     - name: Generate image
       run: |
-        ironic-python-agent-builder fedora
+        sudo /usr/local/bin/ironic-python-agent-builder fedora
