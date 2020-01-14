@@ -16,8 +16,8 @@ jobs:
     
     - name: Setup Builder
       run: |
-        pip3 install wheel
-        pip3 install diskimage-builder ironic-python-agent-builder
+        pip3 install --user wheel
+        pip3 install --user diskimage-builder ironic-python-agent-builder
         pip3 list -v
     - name: Generate image
       run: |
