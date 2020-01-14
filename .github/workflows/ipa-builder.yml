@@ -13,6 +13,7 @@ jobs:
       run: echo Hello, world!
     - name: Setup Builder
       run: |
+        pip install wheel
         pip install --user diskimage-builder ironic-python-agent-builder
     - name: Generate image
       run: |
