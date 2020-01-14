@@ -21,4 +21,5 @@ jobs:
         pip3 list -v
     - name: Generate image
       run: |
-        sudo /usr/local/bin/ironic-python-agent-builder fedora
+        export PATH=$PATH:/home/runner/.local/bin
+        sudo ironic-python-agent-builder fedora
