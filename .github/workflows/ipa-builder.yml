@@ -18,6 +18,7 @@ jobs:
       run: |
         pip3 install wheel
         pip3 install diskimage-builder ironic-python-agent-builder
+        pip3 list -v
     - name: Generate image
       run: |
         sudo ironic-python-agent-builder fedora
