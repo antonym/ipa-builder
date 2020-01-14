@@ -16,11 +16,12 @@ jobs:
     
     - name: Setup Builder
       run: |
-        pip3 install --user wheel
-        pip3 install --user diskimage-builder ironic-python-agent-builder
+        pip3 install wheel
+        pip3 install diskimage-builder ironic-python-agent-builder
         pip3 list -v
     - name: Generate image
       run: |
-        ls -la /home/runner/.local/bin
-        export PATH=$PATH:/home/runner/.local/bin
+        ls -la /opt/hostedtoolcache/Python/3.8.0/x64/bin
+        echo $PATH
+        export PATH=$PATH:/opt/hostedtoolcache/Python/3.8.0/x64/bin
         sudo /home/runner/.local/bin/ironic-python-agent-builder fedora
